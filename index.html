@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Dress-Up Game</title>
+    <style>
+        body {
+            background: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        #game {
+            position: relative;
+            width: 300px;
+            height: 600px;
+        }
+
+        .layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Minimal Dress-Up Game</h2>
+
+<div id="game">
+    <img class="layer" src="https://i.postimg.cc/8PsJpp3w/169-20250713164432.png" alt="Base Doll">
+    <img class="layer" id="underwear" style="display:none;" src="https://i.postimg.cc/SKZjFHrH/169-20250713164055.png" alt="Underwear">
+    <img class="layer" id="tanktop" style="display:none;" src="https://i.postimg.cc/B6XbqN7b/169-20250713165011.png" alt="Tanktop">
+    <img class="layer" id="shorts" style="display:none;" src="https://i.postimg.cc/vTnmnTsd/169-20250713165133.png" alt="Shorts">
+    <img class="layer" id="tshirt" style="display:none;" src="https://i.postimg.cc/zXnBXy7C/169-20250713165423.png" alt="T-shirt">
+</div>
+
+<div>
+    <button onclick="toggleClothing('underwear')">Toggle Underwear</button>
+    <button onclick="toggleClothing('tanktop')">Toggle Tanktop</button>
+    <button onclick="toggleClothing('shorts')">Toggle Shorts</button>
+    <button onclick="toggleClothing('tshirt')">Toggle T-shirt</button>
+</div>
+
+<script>
+    function toggleClothing(itemId) {
+        const item = document.getElementById(itemId);
+        item.style.display = (item.style.display === 'none') ? 'block' : 'none';
+    }
+</script>
+
+</body>
+</html>
